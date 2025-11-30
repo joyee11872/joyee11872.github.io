@@ -31,7 +31,6 @@ jobs:
 
       - name: Build with Next.js
         env:
-          # 这里填入 demo，为了绕过 Cloudinary 的检查
           NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: "demo"
         run: npx next build
 
@@ -49,4 +48,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deployment-pages@v4
+        uses: actions/deploy-pages@v4  # <--- 这里修正了，去掉了 'ment'
